@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldWorks — Si quieres ahorrar en maquinaria agrícola, elige una sola máquina que haga varios trabajos.</title>
+<meta name="description" content="Si quieres ahorrar en maquinaria agrícola, elige una sola máquina que haga varios trabajos. Mira cómo trabajaría y sé de los primeros en probarla.">
+<meta name="theme-color" content="#183b2d">
+<meta property="og:title" content="FieldWorks — Si quieres ahorrar en maquinaria agrícola, elige una sola máquina que haga varios trabajos.">
+<meta property="og:description" content="Una máquina propia para el trabajo de muchas. Mira la demostración y ayúdanos con una encuesta de 3 minutos.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --forest:#183b2d;--forest-2:#285640;--leaf:#8ba77b;--cream:#f5f3e9;--paper:#fffef9;
+  --ink:#202820;--muted:#5d695e;--line:#dfe4d8;--orange:#d87942;--orange-d:#b85f2c;--lime:#8fd11a;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:#fff;padding:8px 14px;border-radius:8px;z-index:50}
+.skip:focus{left:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,243,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent}
+.nav-in{display:flex;align-items:center;gap:22px;max-width:1120px;margin:auto;padding:14px 26px}
+.brand{font-weight:850;letter-spacing:-.04em;font-size:1.25rem;color:var(--forest);margin-right:auto;text-decoration:none}
+.brand span{color:var(--orange)}
+.nav a:not(.brand){text-decoration:none;font-size:.92rem;font-weight:700;color:var(--muted)}
+.nav a:not(.brand):hover{color:var(--forest)}
+.nav .cta{background:var(--forest);color:#fff!important;padding:10px 17px;border-radius:999px;white-space:nowrap}
+.nav .cta:hover{background:var(--forest-2)}
+.nav .m{display:none}
+
+/* hero */
+.hero{max-width:1120px;margin:0 auto;padding:44px 26px 64px;display:grid;grid-template-columns:1.12fr .88fr;gap:46px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:800;color:var(--forest-2)}
+h1{font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.01;letter-spacing:-.055em;margin:16px 0 22px;color:var(--forest)}
+h1 em{font-style:normal;color:var(--orange)}
+.lead{max-width:600px;color:#44514a;font-size:1.13rem;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.button{display:inline-block;text-decoration:none;border-radius:999px;padding:13px 22px;font-weight:800;border:1px solid var(--forest);font:inherit;font-weight:800;cursor:pointer}
+.button.primary{background:var(--forest);color:#fff}
+.button.primary:hover{background:var(--forest-2)}
+.button.secondary{color:var(--forest);background:transparent}
+.button.secondary:hover{background:#e8eddf}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.pills span{font-size:.84rem;font-weight:650;color:var(--forest-2);background:#e8eddf;border-radius:999px;padding:5px 12px}
+
+.heard{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 22px 55px #203b2a18}
+.heard h2{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);margin:0 0 6px;font-weight:800}
+.heard-row{display:grid;grid-template-columns:116px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:center}
+.heard h2+.heard-row{border-top:0}
+.big{font-size:1.5rem;font-weight:850;letter-spacing:-.04em;color:var(--orange);line-height:1.05}
+.heard-row p{margin:0;font-size:.93rem;color:var(--muted)}
+.heard small{display:block;margin-top:6px;color:var(--muted);font-size:.78rem}
+
+section{padding:76px 26px}
+.inner{max-width:1050px;margin:auto}
+h2.t{font-size:clamp(1.9rem,3.8vw,3rem);letter-spacing:-.05em;line-height:1.08;margin:12px 0 14px;color:var(--forest)}
+.section-intro{color:var(--muted);max-width:690px;margin:0}
+
+/* demo */
+#demo{background:var(--paper);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 14px}
+.tabs button,.bar button{font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;border-radius:999px;padding:9px 18px;background:#fff;color:var(--forest);border:1px solid #cbd4c7}
+.tabs button:hover,.bar button:hover{background:#eef2e8}
+.tabs button.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+canvas{width:100%;display:block;aspect-ratio:16/9;border-radius:22px;border:1px solid var(--line);background:#cfe6ee;box-shadow:0 30px 70px -40px rgba(24,59,45,.5)}
+.bar{display:flex;gap:14px;align-items:center;margin:14px 0 8px}
+.bar input{flex:1;accent-color:var(--orange);min-width:0}
+#st{font-weight:700;min-height:1.6em;margin:6px 0 10px;color:var(--forest)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{background:#e8eddf;border-radius:10px;padding:5px 11px;font-size:.88rem;color:var(--muted)}
+.chips b{color:var(--forest);font-weight:700}
+.demo-note{margin:18px 0 0;font-size:.86rem;color:var(--muted);max-width:70ch}
+.demo-cta{margin-top:20px}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.case{background:var(--paper);padding:25px;border-radius:20px;border:1px solid var(--line)}
+.number{color:var(--orange);font-weight:900;font-size:.78rem;letter-spacing:.12em}
+.case h3{color:var(--forest);margin:12px 0 9px;font-size:1.18rem;line-height:1.25}
+.case p{color:var(--muted);font-size:.94rem;margin:0}
+
+/* value */
+.value{background:var(--forest);color:#fff}
+.value h2.t{color:#fff}.value .eyebrow{color:#c5d7b8}.value .section-intro{color:#d5e0d5}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.benefit{border-top:1px solid #ffffff55;padding-top:18px}
+.benefit strong{display:block;font-size:1.06rem;margin-bottom:6px}
+.benefit span{color:#d5e0d5;font-size:.92rem}
+.energy{display:flex;gap:14px;align-items:flex-start;margin-top:34px;background:#ffffff12;border:1px solid #ffffff2e;border-radius:18px;padding:20px 22px;max-width:760px}
+.energy i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--lime);margin-top:8px;box-shadow:0 0 0 5px #8fd11a33}
+.energy p{margin:0;color:#e4ece3;font-size:.95rem}
+
+/* survey */
+.survey-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.survey-note{background:#e8eddf;border-radius:22px;padding:26px;margin-top:26px}
+.survey-note h3{color:var(--forest);margin-top:0}
+.survey-note p,.survey-note li{color:#4c5a4e;font-size:.94rem}
+form{background:var(--paper);border:1px solid var(--line);padding:30px;border-radius:22px}
+label{display:block;font-weight:750;font-size:.9rem;margin:18px 0 7px}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #cbd4c7;border-radius:10px;background:#fff;font:inherit;color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+.hint{color:var(--muted);font-size:.82rem;font-weight:500}
+p.hint{margin:6px 0 0}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:8px}
+.checks label{display:flex;gap:9px;align-items:flex-start;font-weight:500;margin:4px 0}
+.checks input{width:auto;margin-top:6px}
+.submit{margin-top:24px;background:var(--forest);color:#fff;border:0;border-radius:999px;padding:15px 22px;font:inherit;font-weight:800;cursor:pointer;width:100%}
+.submit:hover{background:var(--forest-2)}
+.submit:disabled{opacity:.6;cursor:wait}
+.form-status{display:none;padding:14px;border-radius:12px;margin-top:14px;background:#e8eddf;color:var(--forest);font-weight:650}
+.form-status.err{background:#fbe5dc;color:#8a3410}
+.hp{position:absolute;left:-9999px;opacity:0}
+
+/* faq */
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;color:var(--forest)}
+details p{color:var(--muted);margin:8px 0 0;max-width:64ch}
+
+footer{background:#102c21;color:#d5e0d5;padding:30px 26px;text-align:center;font-size:.85rem}
+footer strong{color:#fff}
+
+@media(max-width:900px){.benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+  .nav-in{padding:12px 20px;gap:14px}.nav .l{display:none}.nav .m{display:inline}
+  .hero,.survey-wrap{grid-template-columns:1fr}
+  .hero{padding:26px 20px 48px;gap:30px}
+  .cases,.benefits{grid-template-columns:1fr}
+  section{padding:56px 20px}
+  form{padding:22px}.checks{grid-template-columns:1fr}
+  .heard-row{grid-template-columns:88px 1fr}
+}
+
+.hero{grid-template-columns:1fr;padding-bottom:36px}
+.hero>div{max-width:820px}
+.survey-one{max-width:680px}
+section#demo{padding-top:44px;padding-bottom:48px}
+@media(max-width:760px){.hero{padding-top:20px}}
+.proof{margin:26px 0 0;max-width:620px;font-size:.95rem;color:var(--muted);border-left:4px solid var(--orange);padding:2px 0 2px 14px}
+.proof strong{color:var(--forest)}
+.hero-actions .button{text-align:center}
+
+/* demo: todas las tareas visibles */
+.demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px}
+.dcard canvas{border-radius:10px;box-shadow:none}
+.dcard h3{margin:8px 4px 0;color:var(--forest);font-size:.92rem;line-height:1.25}
+.dcard .cap{margin:2px 4px 4px;min-height:2.6em;font-weight:600;font-size:.78rem;line-height:1.3;color:var(--muted)}
+.dcard input[type=range]{padding:0;border:0;background:none;accent-color:var(--orange);margin:0 0 10px}
+.dcard .chips span{font-size:.8rem}
+.ifthen{font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.35;color:var(--forest-2);font-weight:600;margin:0 0 16px;max-width:640px}
+.ifthen strong{color:var(--forest);font-weight:850}
+@media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#encuesta">Ir a la encuesta</a>
+
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a class="brand" href="#">FIELD<span>WORKS</span></a>
+    <a class="l" href="#demo">Demostración</a>
+    <a class="cta" href="#encuesta"><span class="l">Cuéntanos tu experiencia</span><span class="m">Responder encuesta</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Todo en un solo lugar · Una máquina, todas las tareas</div>
+    <h1>Si quieres ahorrar en maquinaria agrícola, <em>elige una sola máquina que haga varios trabajos.</em></h1>
+    <p class="lead">Estamos creando una sola máquina para tu finca: carga, sube lomas, siembra y cosecha. Pensada para funcionar con batería y panel solar, para que no dependas de que otro la tenga disponible ni del precio del combustible.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#encuesta">Quiero ser de los primeros en probarla</a>
+      <a class="button secondary" href="#demo">Ver cómo trabajaría</a>
+    </div>
+    <p class="proof"><strong>Lo que nos cuentan los agricultores:</strong> una herramienta mejor puede bajar una tarea de 5 días a 1, pero la maquinaria grande sale cara y toca esperar turno. Todavía es una idea; por eso te preguntamos a ti primero.</p>
+  </div>
+</header>
+
+<section id="demo">
+  <div class="inner">
+    <div class="eyebrow">Demostración interactiva</div>
+    <h2 class="t">Mira cómo trabajaría.</h2>
+    <p class="section-intro">Las cuatro tareas se mueven a la vez. Así imaginamos que una sola máquina haría el trabajo de varias.</p>
+
+    <div class="bar"><button id="pp" type="button">Pausar todas</button></div>
+    <div class="demo-grid" id="grid"></div>
+    <p class="demo-note">Demostración ilustrativa del concepto: las tareas son animaciones, el caminar del robot se entrenó en simulación y todavía no se ha probado en una máquina real. Las cifras son ejemplos.</p>
+    <div class="demo-cta"><a class="button primary" href="#encuesta">¿Te serviría en tu finca? Cuéntanos</a></div>
+  </div>
+</section>
+
+<section id="encuesta" style="background:var(--paper);border-block:1px solid var(--line)">
+  <div class="inner survey-one">
+    <div class="eyebrow">Tu experiencia importa · 1 minuto</div>
+    <h2 class="t">Ayúdanos a entender tu finca.</h2>
+    <p class="section-intro">Antes de construir nada, queremos saber qué necesitas de verdad. No hace falta saber de tecnología.</p>
+
+    <form id="farmerForm" novalidate>
+      <label for="ubicacion">¿Dónde queda tu finca?</label>
+      <input id="ubicacion" name="ubicacion" required placeholder="Municipio, departamento o país" autocomplete="address-level2">
+
+      <label for="tarea">¿Cuál es la tarea que más tiempo o esfuerzo te quita en la finca?</label>
+      <textarea id="tarea" name="tarea_dificil" required placeholder="Cuéntanos tu trabajo de todos los días…"></textarea>
+
+      <label for="gasto">En un año, ¿cuánto gastas aproximadamente en alquilar maquinaria o contratar servicios con máquinas? <span class="hint">(opcional)</span></label>
+      <input id="gasto" name="gasto_anual_alquiler" placeholder="Ej.: 1.500.000 COP, o «nada, lo hago a mano»">
+
+      <label for="interes">¿Te serviría una sola máquina, con batería recargable y panel solar, que haga varias tareas?</label>
+      <select id="interes" name="interes_maquina_solar" required>
+        <option value="">Elige una opción</option><option>Sí, me interesa</option><option>Tal vez, depende del costo</option><option>No</option>
+      </select>
+
+      <label for="precio">Si existiera, ¿cuánto estarías dispuesto a pagar? <span class="hint">(opcional, aproximado)</span></label>
+      <input id="precio" name="precio_dispuesto" placeholder="Ej.: 8.000.000 COP o pago por uso">
+
+      <label for="medio">WhatsApp o correo <span class="hint">(opcional, para avisarte del prototipo)</span></label>
+      <input id="medio" name="contacto" placeholder="¿Cómo podemos contactarte?" autocomplete="tel">
+
+      <input class="hp" type="text" name="sitio_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="submit" type="submit" id="send">Enviar mis respuestas</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <strong>FIELDWORKS</strong> · Mejores herramientas para el trabajo real del campo.<br>
+  <span>Es un concepto temprano. Estamos escuchando antes de construir.</span>
+</footer>
+
+<script>
+/* ============ CONFIGURACIÓN DEL FORMULARIO ============
+   Pega aquí UNA de estas dos cosas para que las respuestas te lleguen:
+   - ACCESS_KEY: llave gratuita de web3forms.com (se recibe por correo)
+   - ENDPOINT:   URL de formspree.io, por ejemplo https://formspree.io/f/xxxxxxx   */
+const CONFIG={ACCESS_KEY:'bfd49407-bc54-456f-abc9-1fb4072ed11f',ENDPOINT:''};
+
+/* ---------- canal de origen (?utm=whatsapp, ?utm=ig, ?utm=linkedin) ---------- */
+const QS=new URLSearchParams(location.search);
+const CANAL=(QS.get('utm')||QS.get('canal')||QS.get('utm_source')||'directo').slice(0,40);
+const VISTAS=new Set();
+
+/* ============ DEMO DEL ROBOT ============ */
+let C,X;
+const $=i=>document.getElementById(i),W=960,H=540,L=140,A=62,ST=107,GY=430,PI=Math.PI;
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),lp=(a,b,t)=>a+(b-a)*t,es=t=>(t=cl(t))*t*(3-2*t),sg=(p,a,b)=>es((p-a)/(b-a));
+const pl=(a,b,t)=>[lp(a[0],b[0],t),lp(a[1],b[1],t)];
+const gF=()=>GY,gR=x=>GY-cl((x-320)*.65,0,340);
+const hips=(bx,by,p)=>{const c=Math.cos(p),s=Math.sin(p),r=(x,y)=>[bx+x*c-y*s,by+x*s+y*c];const f=r(L/2-12,8),b=r(-L/2+12,8);return[f,f,b,b]};
+const loc=(P,x,y)=>{const c=Math.cos(P.p),s=Math.sin(P.p);return[P.bx+x*c-y*s,P.by+x*s+y*c]};
+const rr=(x,y,w,h,r)=>{X.beginPath();X.roundRect?X.roundRect(x,y,w,h,r):X.rect(x,y,w,h);X.fill()};
+const dot=(x,y,r,c)=>{X.fillStyle=c;X.beginPath();X.arc(x,y,r,0,7);X.fill()};
+
+function feet(hp,P,g){return hp.map((h,i)=>{const u=((P.dist/ST+[0,.5,.5,0][i])%1+1)%1;let dx,lift=0;
+ if(u<.6)dx=32-64*u/.6;else{const v=(u-.6)/.4;dx=-32+64*v;lift=Math.sin(v*PI)*22}
+ const wx=h[0]+dx*P.w;return[wx,g(wx)-6-lift*P.w]})}
+function ik(h,f,s){const dx=f[0]-h[0],dy=f[1]-h[1],d=cl(Math.hypot(dx,dy),24,2*A-.5),b=Math.atan2(dy,dx),a=Math.acos(d/(2*A)),t=b-s*a;
+ return{k:[h[0]+A*Math.cos(t),h[1]+A*Math.sin(t)],f:[h[0]+d*Math.cos(b),h[1]+d*Math.sin(b)]}}
+function leg(h,r,c){const D='#1c2326',G='#8fd11a';X.lineCap=X.lineJoin='round';
+ [[D,19,12],[c,14,8]].forEach(([col,w1,w2])=>{X.strokeStyle=col;X.lineWidth=w1;X.beginPath();X.moveTo(h[0],h[1]);X.lineTo(r.k[0],r.k[1]);X.stroke();
+  X.lineWidth=w2;X.beginPath();X.moveTo(r.k[0],r.k[1]);X.lineTo(r.f[0],r.f[1]);X.stroke()});
+ let ux=r.k[0]-(h[0]+r.f[0])/2,uy=r.k[1]-(h[1]+r.f[1])/2;const n=Math.hypot(ux,uy)||1;ux=-ux/n*8;uy=-uy/n*8;
+ X.strokeStyle='#9aa7ab';X.lineWidth=3;X.beginPath();X.moveTo(lp(h[0],r.k[0],.45)+ux,lp(h[1],r.k[1],.45)+uy);X.lineTo(lp(r.k[0],r.f[0],.5)+ux,lp(r.k[1],r.f[1],.5)+uy);X.stroke();
+ dot(r.k[0],r.k[1],9,D);dot(r.k[0],r.k[1],4.5,G);X.fillStyle=D;rr(r.f[0]-10,r.f[1]-4,20,10,3)}
+function body(cargo){const D='#1c2326',G='#8fd11a';
+ X.fillStyle=D;X.beginPath();[[-72,-12],[-58,-26],[52,-26],[74,-8],[70,16],[52,26],[-58,26],[-72,12]].forEach((p,i)=>X[i?'lineTo':'moveTo'](p[0],p[1]));X.fill();
+ X.fillStyle='#eef2f3';X.beginPath();[[-58,-22],[48,-22],[66,-6],[60,10],[-58,10]].forEach((p,i)=>X[i?'lineTo':'moveTo'](p[0],p[1]));X.fill();
+ X.fillStyle=G;X.fillRect(-56,12,112,4);X.fillStyle='#c5d0d3';X.fillRect(-14,-22,2,32);X.fillRect(24,-22,2,32);
+ [58,-58].forEach(x=>{dot(x,8,12,D);dot(x,8,6,G)});
+ X.fillStyle='#e0443a';X.fillRect(-75,-8,4,12);
+ X.fillStyle=D;rr(62,-40,34,22,6);X.fillRect(66,-22,10,8);dot(86,-30,7,'#5ee0ff');dot(84,-32,2.5,'#fff');
+ X.strokeStyle=D;X.lineWidth=3;X.beginPath();X.moveTo(70,-40);X.lineTo(66,-52);X.stroke();
+ X.fillStyle='#2b3438';rr(-8,-34,46,9,4);rr(-64,-34,50,9,3);X.fillRect(-64,-44,3,11);X.fillRect(-17,-44,3,11);
+ cargo.forEach((c,i)=>dot(-52+i*14,-42,7,c))}
+function robot(P,g){const hp=hips(P.bx,P.by,P.p),fe=feet(hp,P,g);P.ov&&P.ov(hp,fe);
+ const R=fe.map((f,i)=>ik(hp[i],f,i<2?1:-1));P.paw=R[0].f;
+ leg(hp[1],R[1],'#8d999d');leg(hp[3],R[3],'#8d999d');
+ X.save();X.translate(P.bx,P.by);X.rotate(P.p);body(P.cargo);X.restore();
+ leg(hp[0],R[0],'#dfe6e8');leg(hp[2],R[2],'#dfe6e8')}
+
+function hills(cx,cy,par,base,amp,wl,col){X.fillStyle=col;X.beginPath();X.moveTo(0,H);
+ for(let x=0;x<=W;x+=24)X.lineTo(x,base-cy*par+Math.sin((x+cx*par)/wl)*amp+Math.sin((x+cx*par)/(wl*.37))*amp*.3);X.lineTo(W,H);X.fill()}
+function ground(g,cx,cy){const x0=cx-20,x1=cx+W+20,yb=cy+H+40;X.beginPath();X.moveTo(x0,yb);for(let x=x0;x<=x1;x+=16)X.lineTo(x,g(x));X.lineTo(x1,yb);X.fillStyle='#7b5233';X.fill();
+ X.beginPath();for(let x=x0;x<=x1;x+=16)X[x==x0?'moveTo':'lineTo'](x,g(x));X.lineWidth=12;X.lineJoin='round';X.strokeStyle='#5fa33c';X.stroke();
+ for(let wx=Math.floor(x0/40)*40;wx<x1;wx+=40){const h=((Math.abs(wx)*7919)%97);dot(wx+h%23,g(wx)+14+h%48,2+h%3,'#5e3d24')}}
+const fruit=p=>{dot(p[0],p[1],8,'#e5483b');dot(p[0]-2,p[1]-3,2,'#ff9d90')};
+function sprout(x,y,h){X.strokeStyle='#3a8f3a';X.lineWidth=4;X.lineCap='round';X.beginPath();X.moveTo(x,y);X.lineTo(x,y-h);X.stroke();
+ X.fillStyle='#4bbf58';[-1,1].forEach(s=>{X.beginPath();X.ellipse(x+s*9,y-h+3,10,5,s*.5,0,7);X.fill()})}
+
+const SACK='#d9bd7d';
+function cart(fx,d){X.fillStyle='#8a5a2c';X.fillRect(fx-130,GY-74,130,16);
+ [fx-100,fx-30].forEach(wx=>{X.save();X.translate(wx,GY-24);X.rotate(d/24);X.strokeStyle='#2b2118';X.lineWidth=6;X.beginPath();X.arc(0,0,21,0,7);X.stroke();
+  X.lineWidth=3;X.beginPath();X.moveTo(-21,0);X.lineTo(21,0);X.moveTo(0,-21);X.lineTo(0,21);X.stroke();X.restore()});
+ X.fillStyle=SACK;rr(fx-124,GY-122,46,48,12);rr(fx-74,GY-122,46,48,12);rr(fx-99,GY-166,46,44,12);
+ X.fillStyle='#5a4320';X.font='bold 14px system-ui';X.fillText('400 kg',fx-122,GY-94)}
+function bike(){const a=Math.atan(.65);X.save();X.translate(440,gR(440));X.rotate(-a);X.strokeStyle='#444';X.lineWidth=4;
+ [-28,28].forEach(x=>{X.beginPath();X.arc(x,-16,16,0,7);X.stroke()});X.beginPath();X.moveTo(-28,-16);X.lineTo(-6,-38);X.lineTo(18,-38);X.lineTo(28,-16);X.moveTo(-6,-38);X.lineTo(4,-16);X.lineTo(-28,-16);X.moveTo(18,-38);X.lineTo(22,-52);X.lineTo(34,-52);X.stroke();
+ X.fillStyle='rgba(0,0,0,.38)';rr(46,12,196,28,8);X.fillStyle='#fff';X.font='bold 15px system-ui';X.fillText('Moto: las ruedas patinan',56,32);X.restore()}
+
+const E=(ph,a,b)=>sg(ph,a,b);
+const SC=[
+{n:'Halar cargas pesadas',T:14,g:gF,
+ st:[['Tarea','Halar cargas pesadas'],['Carga de ejemplo','400 kg'],['Terreno','Camino de tierra']],
+ cap:[[0,'Engancha el carro y arranca'],[3,'Hala la carga con paso firme'],[10,'Mantiene el ritmo con la carga']],
+ pose(ph){const x=40+ph*58,P={bx:x,by:GY-100+Math.sin(x/ST*4*PI)*2,p:.06,w:1,dist:x,cx:x-560,cy:0,cargo:[]};
+  P.back=()=>{const[hx,hy]=loc(P,-72,-6),fx=hx-135;cart(fx,x);X.strokeStyle='#5a4320';X.lineWidth=3;X.beginPath();X.moveTo(hx,hy);X.lineTo(fx,GY-66);X.stroke()};return P}},
+{n:'Subir una pendiente',T:15,g:gR,
+ st:[['Tarea','Subir una pendiente empinada'],['Pendiente','unos 33°'],['Moto','le cuesta subirla']],
+ cap:[[0,'Se acerca a la pendiente'],[3,'Sube con las cuatro patas agarradas al suelo'],[10,'Pasa por donde la moto patina'],[12.5,'Llega arriba con su carga']],
+ pose(ph){const x=60+ph*62,xr=x-L/2,xf=x+L/2,a=gR(xr),b=gR(xf),by=(a+b)/2-92;
+  const P={bx:x,by,p:Math.atan2(b-a,xf-xr),w:1,dist:x,cx:x-330,cy:Math.min(0,by-335),cargo:[SACK,SACK,'#c9a456']};P.back=bike;return P}},
+{n:'Cosechar',T:14,g:gF,
+ st:[['Tarea','Cosechar fruta en lo alto'],['Postura','De pie sobre dos patas'],['Almacenamiento','Canasta en su lomo']],
+ cap:[[0,'Llega al árbol'],[2.6,'Se para en dos patas'],[4.2,'Alcanza la fruta'],[5.4,'La toma y la sostiene'],[7,'Baja y la guarda en su lomo'],[9.2,'Fruta cosechada'],[11,'Sigue al siguiente árbol']],
+ pose(ph){const s=E(ph,2.6,4.2)-E(ph,7,9),Px=120+210*E(ph,0,2.6)+230*E(ph,11,14),p=-1.1*s,r=E(ph,4.2,5.2)-.65*E(ph,6,6.9)-.35*E(ph,7.5,8.8),F=[440,140];
+  const P={bx:Px+70*Math.cos(p),by:GY-100+70*Math.sin(p),p,w:1-E(ph,2.2,2.8)+E(ph,10.8,11.4),dist:Px,cx:Px-300,cy:0,cargo:ph>8.9?['#e5483b']:[]};
+  P.ov=(h,f)=>{f[0]=pl(f[0],F,r);f[1]=pl(f[1],[F[0]+12,F[1]+22],r)};
+  P.back=()=>{X.fillStyle='#6b4423';X.fillRect(482,140,18,GY-140);
+   [[440,115,46],[490,95,52],[530,130,42],[470,150,40]].forEach(c=>dot(c[0],c[1],c[2],'#4c9a3c'));[[455,105,30],[500,85,34]].forEach(c=>dot(c[0],c[1],c[2],'#5fb04a'));
+   fruit([490,128]);fruit([526,152]);ph<5.4&&fruit(F)};
+  P.front=()=>{if(ph>5.4&&ph<8.9){const k=P.paw,b=loc(P,-34,-44),t=cl((ph-8.3)/.6);fruit(t>0?[lp(k[0],b[0],es(t)),lp(k[1],b[1],es(t))-40*Math.sin(t*PI)]:k)}};return P}},
+{n:'Cavar y sembrar',T:16,g:gF,
+ st:[['Tarea','Cavar un hoyo y sembrar'],['Herramienta','Patas delanteras'],['Cultivo','Plántula en su lomo']],
+ cap:[[0,'Camina al punto de siembra'],[2.8,'Cava con las patas delanteras'],[7.4,'Deja caer la plántula en el hoyo'],[9.4,'La cubre con tierra'],[12,'Plántula sembrada'],[13,'Sigue al siguiente punto']],
+ pose(ph){const x=90+240*E(ph,0,2.5)+220*E(ph,13,16),xh=438,dg=E(ph,2.8,3.3)-E(ph,6.9,7.3)+E(ph,9.3,9.7)-E(ph,11.6,12),d=18*E(ph,3,7)-18*E(ph,9.4,11.8);
+  const P={bx:x,by:GY-100,p:0,w:1-E(ph,2.1,2.7)+E(ph,12.6,13.2),dist:x,cx:x-300,cy:0,cargo:ph<7.6?['#3fae49']:[]};
+  P.ov=(h,f)=>{[0,1].forEach(i=>{const q=(ph*1.7+i*.5)%1,a=h[i][0];let t;
+   if(q<.7)t=[a+82-56*q/.7,GY-6];else{const v=(q-.7)/.3;t=[a+26+56*v,GY-6-28*Math.sin(v*PI)]}f[i]=pl(f[i],t,dg)})};
+  P.back=()=>{if(d>.2){X.fillStyle='#35200f';X.beginPath();X.ellipse(xh,GY-5,30,d+5,0,0,PI);X.fill();
+   X.fillStyle='#6a4426';[-1,1].forEach(s=>{X.beginPath();X.ellipse(xh+s*42,GY-2,22,d*.7,0,PI,0);X.fill()})}
+   if(ph>=8.5)sprout(xh,GY+4*d/18,8+34*E(ph,8.5,15))};
+  P.front=()=>{if(dg>.05){X.globalAlpha=dg;const cv=ph>9;for(let k=0;k<10;k++){const t=(ph*1.7+k/10)%1;
+    dot(cv?xh-76+70*t:xh+10-70*t+k%3*6,GY-8-50*Math.sin(PI*t),3,'#6a4426')}X.globalAlpha=1}
+   if(ph>7.6&&ph<8.5){const t=es((ph-7.6)/.9),b=loc(P,-34,-44);sprout(lp(b[0],xh,t),lp(b[1],GY-10,t)-90*Math.sin(t*PI),16)}};return P}}
+];
+
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let play=!REDUCE,last=0;
+function draw(S,ph){const P=S.pose(ph),k=C.width/W;X.setTransform(k,0,0,k,0,0);
+ const g=X.createLinearGradient(0,0,0,H);g.addColorStop(0,'#9fd3ea');g.addColorStop(1,'#f4eccd');X.fillStyle=g;X.fillRect(0,0,W,H);
+ dot(800,90-P.cy*.02,40,'#ffe27a');hills(P.cx,P.cy,.15,330,26,140,'#b6d3a0');hills(P.cx,P.cy,.35,380,20,90,'#8fb878');
+ X.save();X.translate(-P.cx,-P.cy);ground(S.g,P.cx,P.cy);P.back&&P.back();robot(P,S.g);P.front&&P.front();X.restore();
+ const f=Math.max(1-ph/.4,(ph-(S.T-.4))/.4,0);if(f>0){X.fillStyle=`rgba(20,26,18,${f})`;X.fillRect(0,0,W,H)}
+ let c='';S.cap.forEach(a=>{if(ph>=a[0])c=a[1]});return c}
+const cards=[];
+function size(){const d=Math.min(devicePixelRatio||1,2);cards.forEach(cd=>{cd.cv.width=Math.round(cd.cv.clientWidth*d);cd.cv.height=Math.round(cd.cv.width*9/16)})}
+function frame(ts){const dt=Math.min((ts-last)/1000||0,.1);last=ts;
+ cards.forEach(cd=>{if(!cd.vis)return;if(play)cd.t+=dt;const ph=cd.t%cd.S.T;C=cd.cv;X=cd.x;
+  const c=draw(cd.S,ph);if(c!==cd.last){cd.cap.textContent=c;cd.last=c}});
+ requestAnimationFrame(frame)}
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{const cd=cards.find(c=>c.cv===e.target);
+ cd.vis=e.isIntersecting;if(e.intersectionRatio>=.5)VISTAS.add(cd.S.n)}),{threshold:[0,.5]}):null;
+SC.forEach(S=>{const el=document.createElement('article');el.className='dcard';
+ el.innerHTML=`<canvas role="img" aria-label="Animación del robot de cuatro patas: ${S.n}"></canvas><h3>${S.n}</h3><p class="cap"></p>`;
+ $('grid').appendChild(el);
+ const cv=el.querySelector('canvas');
+ const cd={S,cv,x:cv.getContext('2d'),cap:el.querySelector('.cap'),t:REDUCE?4:0,vis:!io,last:''};
+ cards.push(cd);io&&io.observe(cv)});
+$('pp').textContent=play?'Pausar todas':'Reanudar todas';
+$('pp').onclick=()=>{play=!play;$('pp').textContent=play?'Pausar todas':'Reanudar todas'};
+addEventListener('resize',size);size();
+requestAnimationFrame(frame);
+
+/* ============ ENCUESTA ============ */
+const form=$('farmerForm'),box=$('formStatus'),btn=$('send');
+function say(msg,err){box.className='form-status'+(err?' err':'');box.style.display='block';box.textContent=msg;box.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'nearest'})}
+form.addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!form.reportValidity())return;
+ if(form.elements.sitio_web.value)return; // trampa para bots
+ const url=CONFIG.ENDPOINT||(CONFIG.ACCESS_KEY?'https://api.web3forms.com/submit':'');
+ if(!url){say('El formulario todavía no está conectado. Avísale al equipo, por favor.',true);return}
+ const fd=new FormData(form),o={};
+ fd.forEach((v,k)=>{if(k==='sitio_web')return;o[k]=k in o?o[k]+', '+v:v});
+ o.canal=CANAL;o.tareas_demo_vistas=[...VISTAS].join(', ')||'ninguna';o.fecha=new Date().toISOString();
+ if(CONFIG.ACCESS_KEY){o.access_key=CONFIG.ACCESS_KEY;o.subject='Nueva respuesta FieldWorks ('+CANAL+')';o.from_name='FieldWorks'}
+ btn.disabled=true;btn.textContent='Enviando…';
+ try{
+  const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(o)});
+  if(!r.ok)throw new Error(r.status);
+  form.reset();say('¡Gracias por contarnos tu experiencia! Tus respuestas nos ayudan a construir algo que de verdad sirva en el campo.',false);
+ }catch(_){say('No pudimos enviar tus respuestas. Revisa tu conexión e inténtalo de nuevo, por favor.',true)}
+ finally{btn.disabled=false;btn.textContent='Enviar mis respuestas'}
+});
+</script>
+</body>
+</html>
